@@ -1,0 +1,38 @@
+@import '../assets/scss/colors.scss';
+
+.scorePanel {
+  border-radius: 5px;
+  border: 3px solid $grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.scoreContainer {
+  background-color: white;
+  border-radius: 5px;
+  color: $dark;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.2rem;
+  text-align: center;
+  width: 5rem;
+
+  span:first-child {
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: $blue;
+  }
+}
+
+.score {
+  font-family: 'Barlow-Semi-Condensed-bold';
+  font-size: 2.5rem;
+}
