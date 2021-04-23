@@ -16,7 +16,13 @@
 
 %weaponContainer {
   position: absolute;
+  transition: transform 0.2s linear;
   z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
 }
 
 %weapon {

@@ -1,0 +1,21 @@
+@import './assets/scss/colors.scss';
+
+.rulesContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.rulesBtn {
+  background: transparent;
+  border: 1px solid $grey;
+  color: white;
+  border-radius: 8px;
+  padding: 11px 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.rulesBtn:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+@import '../assets/scss/colors.scss';
+
+.container {
+  align-items: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 999;
+}
+
+h2 {
+  color: $dark;
+  font-family: 'Barlow-Semi-Condensed-bold';
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  margin: 5rem 0 6rem 0;
+}
+
+.closeIcon {
+  bottom: 3.5rem;
+  position: absolute;
+}
