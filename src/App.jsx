@@ -4,13 +4,14 @@
  * Email: abdelmawla.souat@gmail.com
  * -----
  * Created at: 2021-04-22 6:51:44 pm
- * Last Modified: 2021-04-23 12:28:22 am
+ * Last Modified: 2021-04-23 12:51:45 am
  * -----
  * Copyright (c) 2021 Yuei
  */
 
 import React, { Component } from 'react';
 import ScorePanel from './components/ScorePanel';
+import GameArea from './components/GameArea';
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <main>
         <ScorePanel score={score} />
+        <GameArea />
       </main>
     );
   }

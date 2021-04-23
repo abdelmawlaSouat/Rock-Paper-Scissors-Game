@@ -1,0 +1,120 @@
+@import '../assets/scss/colors.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 7rem 0;
+}
+
+.gameArea {
+  position: relative;
+
+  .pentagonBg {
+    width: 17rem;
+  }
+}
+
+%weaponContainer {
+  position: absolute;
+  z-index: 1;
+}
+
+%weapon {
+  background-clip: padding-box;
+  background-color: white;
+  border-radius: 50%;
+  height: min-content;
+  padding: 1rem 1.2rem;
+  position: relative;
+
+  &:before {
+    border-radius: 50%;
+    bottom: 0;
+    content: '';
+    left: 0;
+    margin: -12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .weaponImg {
+    width: 2.2rem;
+  }
+}
+
+.yellowWeaponContainer {
+  @extend %weaponContainer;
+
+  top: -1rem;
+  left: 6rem;
+
+  .yellowWeapon {
+    @extend %weapon;
+
+    &:before {
+      background: linear-gradient(to right, $yellow_gradient);
+    }
+  }
+}
+
+.purpleWeaponContainer {
+  @extend %weaponContainer;
+
+  right: -1rem;
+  top: 4rem;
+
+  .purpleWeapon {
+    @extend %weapon;
+
+    &:before {
+      background: linear-gradient(to right, $purple_gradient);
+    }
+  }
+}
+
+.redWeaponContainer {
+  @extend %weaponContainer;
+
+  right: 1.8rem;
+  bottom: -0.8rem;
+
+  .redWeapon {
+    @extend %weapon;
+
+    &:before {
+      background: linear-gradient(to right, $red_gradient);
+    }
+  }
+}
+
+.lightPurpleWeaponContainer {
+  @extend %weaponContainer;
+
+  left: 1.8rem;
+  bottom: -0.8rem;
+
+  .lightPurpleWeapon {
+    @extend %weapon;
+
+    &:before {
+      background: linear-gradient(to right, $light_purple_gradient);
+    }
+  }
+}
+
+.cyanWeaponContainer {
+  @extend %weaponContainer;
+
+  left: -1rem;
+  top: 4rem;
+
+  .cyanWeapon {
+    @extend %weapon;
+
+    &:before {
+      background: linear-gradient(to right, $cyan_gradient);
+    }
+  }
+}
