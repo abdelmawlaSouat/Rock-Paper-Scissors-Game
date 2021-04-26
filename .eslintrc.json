@@ -16,6 +16,7 @@
     "react/prefer-stateless-function": "off",
     "react/no-unused-state": "warn",
     "no-console": "warn",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "object-curly-newline": "off"
   }
 }

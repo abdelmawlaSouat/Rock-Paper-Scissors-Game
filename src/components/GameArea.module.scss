@@ -1,126 +1,166 @@
 @import '../assets/scss/colors.scss';
+@import '../assets/scss/weapons.scss';
 
 .container {
   display: flex;
-  justify-content: center;
-  margin: 7rem 0;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0;
 }
 
-.gameArea {
+/*
+ *  Weapons Selection Style
+*/
+
+.weaponsSelection {
   position: relative;
+  opacity: 1;
+  transition: opacity 0.3s linear;
 
   .pentagonBg {
     width: 17rem;
   }
-}
 
-%weaponContainer {
-  position: absolute;
-  transition: transform 0.2s linear;
-  z-index: 1;
+  .yellowWeaponContainer {
+    @extend %weaponContainer;
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.15);
-  }
-}
-
-%weapon {
-  background-clip: padding-box;
-  background-color: white;
-  border-radius: 50%;
-  height: min-content;
-  padding: 1rem 1.2rem;
-  position: relative;
-
-  &:before {
-    border-radius: 50%;
-    bottom: 0;
-    content: '';
-    left: 0;
-    margin: -12px;
     position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
+    top: -1rem;
+    left: 6rem;
   }
 
-  .weaponImg {
-    width: 2.2rem;
+  .purpleWeaponContainer {
+    @extend %weaponContainer;
+
+    position: absolute;
+    right: -1rem;
+    top: 4rem;
+  }
+
+  .redWeaponContainer {
+    @extend %weaponContainer;
+
+    position: absolute;
+    right: 1.8rem;
+    bottom: -0.8rem;
+  }
+
+  .lightPurpleWeaponContainer {
+    @extend %weaponContainer;
+
+    position: absolute;
+    left: 1.8rem;
+    bottom: -0.8rem;
+  }
+
+  .cyanWeaponContainer {
+    @extend %weaponContainer;
+
+    position: absolute;
+    left: -1rem;
+    top: 3.5rem;
   }
 }
 
-.yellowWeaponContainer {
-  @extend %weaponContainer;
+/*
+*  Battlefield Style
+*/
 
-  top: -1rem;
-  left: 6rem;
+.battlefield {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  top: 30vh;
+  left: 0;
+  transition: opacity 0.3s linear;
 
-  .yellowWeapon {
-    @extend %weapon;
+  .userChoice,
+  .houseChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    &:before {
-      background: linear-gradient(to right, $yellow_gradient);
+    .weaponImg {
+      width: 4rem;
+    }
+
+    span {
+      margin-top: 2.5rem;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  }
+
+  .houseChoice {
+    transition: all 2s linear;
+
+    &.transparent {
+      div {
+        opacity: 0.1;
+
+        &:before {
+          background: black;
+        }
+
+        img {
+          opacity: 0;
+        }
+      }
+    }
+
+    &.visible {
+      div {
+        opacity: 1;
+        transition: all 0.1s linear;
+      }
     }
   }
 }
 
-.purpleWeaponContainer {
-  @extend %weaponContainer;
+/*
+ * END Game Message 
+*/
 
-  right: -1rem;
-  top: 4rem;
+.endGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s linear;
 
-  .purpleWeapon {
-    @extend %weapon;
-
-    &:before {
-      background: linear-gradient(to right, $purple_gradient);
-    }
+  span {
+    color: white;
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  button {
+    background: white;
+    border: 0;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    padding: 0.9rem 0rem;
+    font-weight: bold;
+    color: $dark;
   }
 }
 
-.redWeaponContainer {
-  @extend %weaponContainer;
+/*
+ * Visibility 
+*/
 
-  right: 1.8rem;
-  bottom: -0.8rem;
-
-  .redWeapon {
-    @extend %weapon;
-
-    &:before {
-      background: linear-gradient(to right, $red_gradient);
-    }
-  }
+.visible {
+  opacity: 1;
 }
 
-.lightPurpleWeaponContainer {
-  @extend %weaponContainer;
-
-  left: 1.8rem;
-  bottom: -0.8rem;
-
-  .lightPurpleWeapon {
-    @extend %weapon;
-
-    &:before {
-      background: linear-gradient(to right, $light_purple_gradient);
-    }
-  }
-}
-
-.cyanWeaponContainer {
-  @extend %weaponContainer;
-
-  left: -1rem;
-  top: 4rem;
-
-  .cyanWeapon {
-    @extend %weapon;
-
-    &:before {
-      background: linear-gradient(to right, $cyan_gradient);
-    }
-  }
+.hidden {
+  opacity: 0;
 }

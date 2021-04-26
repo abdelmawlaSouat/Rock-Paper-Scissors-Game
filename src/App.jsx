@@ -4,7 +4,7 @@
  * Email: abdelmawla.souat@gmail.com
  * -----
  * Created at: 2021-04-22 6:51:44 pm
- * Last Modified: 2021-04-23 5:13:11 pm
+ * Last Modified: 2021-04-26 3:35:03 am
  * -----
  * Copyright (c) 2021 Yuei
  */
@@ -14,6 +14,8 @@ import ScorePanel from './components/ScorePanel';
 import GameArea from './components/GameArea';
 import RulesModal from './components/RulesModal';
 import styles from './App.module.scss';
+
+// TODO: Add score & responsive design
 
 class App extends Component {
   constructor(props) {

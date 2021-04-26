@@ -1,0 +1,78 @@
+@import './colors.scss';
+
+%weaponContainer {
+  z-index: 1;
+  background: none;
+  border: 0;
+
+  transition: transform 0.2s linear;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+}
+
+%weapon {
+  background-clip: padding-box;
+  background-color: white;
+  border-radius: 50%;
+  height: min-content;
+  padding: 1rem 1.2rem;
+  position: relative;
+
+  &:before {
+    border-radius: 50%;
+    bottom: 0;
+    content: '';
+    left: 0;
+    margin: -12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .weaponImg {
+    width: 2.2rem;
+  }
+}
+
+.yellowWeapon {
+  @extend %weapon;
+
+  &:before {
+    background: linear-gradient(to right, $yellow_gradient);
+  }
+}
+
+.purpleWeapon {
+  @extend %weapon;
+
+  &:before {
+    background: linear-gradient(to right, $purple_gradient);
+  }
+}
+
+.redWeapon {
+  @extend %weapon;
+
+  &:before {
+    background: linear-gradient(to right, $red_gradient);
+  }
+}
+
+.lightPurpleWeapon {
+  @extend %weapon;
+
+  &:before {
+    background: linear-gradient(to right, $light_purple_gradient);
+  }
+}
+
+.cyanWeapon {
+  @extend %weapon;
+
+  &:before {
+    background: linear-gradient(to right, $cyan_gradient);
+  }
+}
