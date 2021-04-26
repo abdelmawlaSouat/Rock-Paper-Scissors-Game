@@ -13,6 +13,9 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "react/no-unused-state": "warn",
+    "no-console": "warn",
+    "comma-dangle": "off"
   }
 }
