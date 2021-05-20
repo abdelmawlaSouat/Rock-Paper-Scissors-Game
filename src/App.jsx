@@ -4,7 +4,7 @@
  * Email: abdelmawla.souat@gmail.com
  * -----
  * Created at: 2021-04-22 6:51:44 pm
- * Last Modified: 2021-04-26 3:35:03 am
+ * Last Modified: 2021-05-20 4:39:06 pm
  * -----
  * Copyright (c) 2021 Yuei
  */
@@ -15,25 +15,43 @@ import GameArea from './components/GameArea';
 import RulesModal from './components/RulesModal';
 import styles from './App.module.scss';
 
-// TODO: Add score & responsive design
+// TODO: responsive design
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      score: 5,
+      score: 0,
       showModal: false,
     };
+  }
+
+  componentDidMount() {
+    const { score } = this.state;
+
+    console.log(localStorage.getItem('score'));
+
+    if (localStorage.getItem('score')) {
+      this.setState({
+        score: parseInt(localStorage.getItem('score'), 10),
+      });
+    } else {
+      localStorage.setItem('score', score);
+    }
   }
 
   render() {
     const { score, showModal } = this.state;
     const toggleModal = () => this.setState({ showModal: !showModal });
+    const updateScore = (newScore) => {
+      this.setState({ score: newScore });
+      localStorage.setItem('score', newScore);
+    };
 
     return (
       <main>
         <ScorePanel score={score} />
-        <GameArea />
+        <GameArea score={score} handleScore={updateScore} />
         <div className={styles.rulesContainer}>
           <button
             type="button"

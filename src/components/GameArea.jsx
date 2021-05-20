@@ -4,13 +4,14 @@
  * Email: abdelmawla.souat@gmail.com
  * -----
  * Created at: 2021-04-23 12:51:31 am
- * Last Modified: 2021-04-26 3:34:09 am
+ * Last Modified: 2021-05-20 4:34:49 pm
  * -----
  * Copyright (c) 2021 Yuei
  */
 
 import React, { Component } from 'react';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 import styles from './GameArea.module.scss';
 
@@ -83,9 +84,13 @@ class GameArea extends Component {
 
   fight() {
     const { userChoice, houseChoice } = this.state;
+    const { score, handleScore } = this.props;
     let winner = '';
+    let newScore = score;
 
-    if (userChoice === 0) {
+    if (userChoice === houseChoice) {
+      winner = null;
+    } else if (userChoice === 0) {
       winner = houseChoice === 1 || houseChoice === 4 ? 'user' : 'house';
     } else if (userChoice === 1) {
       winner = houseChoice === 2 || houseChoice === 3 ? 'user' : 'house';
@@ -97,6 +102,11 @@ class GameArea extends Component {
       winner = houseChoice === 1 || houseChoice === 2 ? 'user' : 'house';
     }
     this.setState({ winner });
+
+    if (winner) {
+      newScore = winner === 'user' ? score + 1 : score - 1;
+      handleScore(newScore);
+    }
   }
 
   replay() {
@@ -191,7 +201,9 @@ class GameArea extends Component {
 
         {/* Message of end game */}
         <div className={clsx(styles.endGame, step === 3 ? styles.visible : '')}>
-          <span>{winner === 'user' ? 'YOU WIN' : 'YOU LOSE'}</span>
+          <span>{!winner && 'EQUAL'}</span>
+          <span>{winner === 'user' && 'YOU WIN'}</span>
+          <span>{winner === 'house' && 'YOU LOSE'}</span>
           <button type="button" onClick={this.replay}>
             PLAY AGAIN
           </button>
@@ -200,5 +212,10 @@ class GameArea extends Component {
     );
   }
 }
+
+GameArea.propTypes = {
+  score: PropTypes.number.isRequired,
+  handleScore: PropTypes.func.isRequired,
+};
 
 export default GameArea;
