@@ -1,7 +1,8 @@
 @import '../assets/scss/colors.scss';
+@import '../assets/scss/responsive.scss';
 
 .scorePanel {
-  border-radius: 5px;
+  border-radius: 20px;
   border: 3px solid $grey;
   display: flex;
   justify-content: space-between;
@@ -35,4 +36,35 @@
 .score {
   font-family: 'Barlow-Semi-Condensed-bold';
   font-size: 2.5rem;
+}
+
+@media screen and (min-width: $md_screen) {
+  .scorePanel {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (min-width: $xl_screen) {
+  .scorePanel {
+    margin: 0 20%;
+  }
+
+  .scoreContainer {
+    padding: 0.9rem 0.4rem;
+    text-align: center;
+    width: 7rem;
+
+    span:first-child {
+      font-size: 0.8rem;
+    }
+  }
+
+  .logo {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .score {
+    font-size: 3.5rem;
+  }
 }
