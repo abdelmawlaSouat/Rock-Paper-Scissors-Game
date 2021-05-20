@@ -4,7 +4,7 @@
  * Email: abdelmawla.souat@gmail.com
  * -----
  * Created at: 2021-04-22 6:51:44 pm
- * Last Modified: 2021-05-20 4:39:06 pm
+ * Last Modified: 2021-05-20 4:56:46 pm
  * -----
  * Copyright (c) 2021 Yuei
  */
@@ -28,8 +28,6 @@ class App extends Component {
 
   componentDidMount() {
     const { score } = this.state;
-
-    console.log(localStorage.getItem('score'));
 
     if (localStorage.getItem('score')) {
       this.setState({

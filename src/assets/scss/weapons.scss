@@ -1,4 +1,5 @@
 @import './colors.scss';
+@import './responsive.scss';
 
 %weaponContainer {
   z-index: 1;
@@ -74,5 +75,18 @@
 
   &:before {
     background: linear-gradient(to right, $cyan_gradient);
+  }
+}
+
+@media screen and (min-width: $md_screen) {
+  %weapon {
+    padding: 1.5rem 1.7rem;
+
+    .weaponImg {
+      width: 3.5rem;
+    }
+    &:before {
+      margin: -25px;
+    }
   }
 }

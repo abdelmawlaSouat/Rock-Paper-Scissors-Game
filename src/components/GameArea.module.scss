@@ -164,3 +164,114 @@
 .hidden {
   opacity: 0;
 }
+
+/*
+* Media Queries
+*/
+
+@media screen and (min-width: $sm_screen) {
+  .endGame {
+    position: absolute;
+    top: 60vh;
+    left: inherit;
+
+    span {
+      font-size: 4rem;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 1.2rem 0rem;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+@media screen and (min-width: $md_screen) {
+  .container {
+    margin: 10em 0;
+  }
+
+  .weaponsSelection {
+    .pentagonBg {
+      width: 30rem;
+    }
+
+    .yellowWeaponContainer {
+      top: -2rem;
+      left: 11rem;
+    }
+
+    .purpleWeaponContainer {
+      right: -2rem;
+      top: 7rem;
+    }
+
+    .redWeaponContainer {
+      right: 1.8rem;
+      bottom: -0.8rem;
+    }
+
+    .lightPurpleWeaponContainer {
+      left: 2rem;
+      bottom: -0.8rem;
+    }
+
+    .cyanWeaponContainer {
+      left: -2rem;
+      top: 7rem;
+    }
+  }
+  .battlefield {
+    .userChoice,
+    .houseChoice {
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+  .endGame {
+    span {
+      font-size: 5rem;
+    }
+  }
+}
+
+@media screen and (min-width: $lg_screen) {
+  .weaponsSelection {
+    .pentagonBg {
+      width: 35rem;
+    }
+
+    .yellowWeaponContainer {
+      left: 13rem;
+    }
+
+    .purpleWeaponContainer {
+      right: -3rem;
+      top: 8rem;
+    }
+
+    .cyanWeaponContainer {
+      left: -3rem;
+      top: 8rem;
+    }
+  }
+}
+
+@media screen and (min-width: $xl_screen) {
+  .endGame {
+    top: 60vh;
+
+    span {
+      font-size: 5rem;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 1.2rem 0rem;
+    }
+  }
+
+  .container {
+    margin: 7rem 0;
+  }
+}

@@ -4,7 +4,7 @@
  * Email: abdelmawla.souat@gmail.com
  * -----
  * Created at: 2021-04-23 3:15:14 am
- * Last Modified: 2021-04-23 5:15:12 pm
+ * Last Modified: 2021-05-20 5:50:17 pm
  * -----
  * Copyright (c) 2021 Yuei
  */
@@ -24,8 +24,12 @@ class RulesModal extends Component {
       <div className={clsx(styles.container, visible ? styles.visible : '')}>
         <h2>RULES</h2>
         <img src={rulesImg} alt="Rules" />
-        <button type="button" onClick={handleVisible}>
-          <img className={styles.closeIcon} src={closeIcon} alt="Close Icon" />
+        <button
+          type="button"
+          onClick={handleVisible}
+          className={styles.closeIcon}
+        >
+          <img src={closeIcon} alt="Close Icon" />
         </button>
       </div>
     );

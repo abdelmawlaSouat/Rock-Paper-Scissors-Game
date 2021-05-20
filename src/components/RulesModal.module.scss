@@ -1,4 +1,5 @@
 @import '../assets/scss/colors.scss';
+@import '../assets/scss/responsive.scss';
 
 .container {
   align-items: center;
@@ -27,11 +28,34 @@
   margin: 5rem 0 6rem 0;
 }
 
-button {
+.closeIcon {
+  border: 0;
+  background-color: white;
   cursor: pointer;
+  bottom: 3.5rem;
+  position: absolute;
+}
+
+@media screen and (min-width: $lg_screen) {
+  .container {
+    top: 15vh;
+    left: 35vw;
+    width: auto;
+    height: auto;
+    padding: 1rem 2rem 2rem 2rem;
+    border-radius: 5px;
+    align-items: flex-start;
+    box-shadow: 12px 14px 25px 2px rgba(0, 0, 0, 0.58);
+  }
+
+  .container h2 {
+    margin: 0.5rem 0 1rem 0;
+  }
 
   .closeIcon {
-    bottom: 3.5rem;
     position: absolute;
+    bottom: initial;
+    top: 2rem;
+    right: 2rem;
   }
 }
